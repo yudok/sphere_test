@@ -1,0 +1,13 @@
+<h3 class="text-center">Products for Sale</h3>
+
+<h4> TODAYS SALES </h4>
+<p> Buy 2 units of "Ethiopia Harrar" get a 50% discount </p>
+<p> Buy 3 units of "Big leaf tea" get a 20 Usd discount on your order </p>
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @items.each do |item| %>
+      <%= render "product_row", item: item, cart_item: @cart_item %>
+    <% end %>
+  </div>
+</div>

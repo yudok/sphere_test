@@ -1,0 +1,10 @@
+<h4><%= item.name %></h4>
+
+<%= form_for cart_item, remote: true do |f| %>
+<h4>Unit Price: <span><%= number_to_currency cart_item.unit_price %></span></h4>
+<%= f.number_field :quantity, value: cart_item.quantity.to_i, min: 1 %>
+<%= f.hidden_field :item_id, value: item.id %>
+<%= f.submit "Update Quantity" %>
+<%= link_to "Delete", cart_item, { data: { confirm: "Are you sure you wish to delete the product '#{cart_item.item.name}' from your cart?" }, method: :delete, remote: true } %>
+<h4>Total Price: <span><%= number_to_currency cart_item.total_price %></span></h4>
+<% end %>

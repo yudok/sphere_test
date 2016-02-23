@@ -1,0 +1,5 @@
+<%= link_to "#{current_cart.cart_items.size} Items in Cart ( #{number_to_currency current_cart.subtotal} )", cart_path(1) %>
+<br>
+<%= "Price with discount: #{current_cart.total_price} "%>
+<br>
+<%= "Total discount: #{current_cart.all_sales_discount} "%>
